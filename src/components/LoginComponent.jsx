@@ -11,7 +11,7 @@ const LoginComponent = () => {
   const navigate = useNavigate();
   const login = async () => {
     try {
-      let res = await loginApi(credentials.email, credentials.password);
+      await loginApi(credentials.email, credentials.password);
       toast.success("sign in to linkedIn");
       navigate("/");
     } catch (error) {
@@ -19,8 +19,8 @@ const LoginComponent = () => {
     }
   };
   const googleSignin = async () => {
-    let res = await googleSignInApi();
-    console.log(res);
+    await googleSignInApi();
+    navigate("/");
   };
   return (
     <div className="login-wrapper">

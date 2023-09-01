@@ -11,7 +11,7 @@ export const RegisterComponent = () => {
   const navigate = useNavigate();
   const login = async () => {
     try {
-      let res = await registerApi(credentials.email, credentials.password);
+      await registerApi(credentials.email, credentials.password);
       toast.success("account created");
       navigate("/");
     } catch (error) {
@@ -19,8 +19,8 @@ export const RegisterComponent = () => {
     }
   };
   const googleSignin = async () => {
-    let res = await googleSignInApi();
-    console.log(res);
+    await googleSignInApi();
+    navigate("/");
   };
   return (
     <div className="login-wrapper">
