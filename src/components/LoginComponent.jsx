@@ -11,9 +11,10 @@ const LoginComponent = () => {
   const navigate = useNavigate();
   const login = async () => {
     try {
-      await loginApi(credentials.email, credentials.password);
+      let res = await loginApi(credentials.email, credentials.password);
       toast.success("sign in to linkedIn");
       navigate("/");
+      localStorage.setItem("userEmail", res.user.email);
     } catch (error) {
       toast.error("please check email or password");
     }

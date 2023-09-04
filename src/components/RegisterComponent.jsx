@@ -11,9 +11,10 @@ export const RegisterComponent = () => {
   const navigate = useNavigate();
   const login = async () => {
     try {
-      await registerApi(credentials.email, credentials.password);
+      let res = await registerApi(credentials.email, credentials.password);
       toast.success("account created");
       navigate("/");
+      localStorage.setItem("userEmail", res.user.email);
     } catch (error) {
       toast.error("can not create an account");
     }

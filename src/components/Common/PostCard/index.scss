@@ -1,0 +1,28 @@
+.post-cards {
+  width: 500px;
+  .posts-card {
+    width: 100%;
+    background: white;
+    border: 1px solid #b7b7b7;
+    border-radius: 7px;
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+
+    .post-date {
+      font-family: system-ui, sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.6);
+      margin: 10px 0 0 10px;
+    }
+
+    .status {
+      margin: 10px 0 0 10px;
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}
