@@ -8,13 +8,22 @@
     display: flex;
     margin-bottom: 10px;
     flex-direction: column;
+    padding-bottom: 20px;
+
+    .author-name {
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.6);
+      margin: 10px 0 0 10px;
+    }
 
     .post-date {
       font-family: system-ui, sans-serif;
       font-size: 12px;
       font-weight: 400;
       color: rgba(0, 0, 0, 0.6);
-      margin: 10px 0 0 10px;
+      margin: 0 10px;
     }
 
     .status {

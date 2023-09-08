@@ -6,13 +6,17 @@ import LinkedinLogo from "../assets/LinkedinLogo.png";
 import GoogleButton from "react-google-button";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+
+import { postUserData } from "../api/FirestoreApi";
 export const RegisterComponent = () => {
   const [credentials, setCredentials] = useState({});
   const navigate = useNavigate();
-  const login = async () => {
+  const register = async () => {
     try {
       let res = await registerApi(credentials.email, credentials.password);
       toast.success("account created");
+
+      postUserData({ name: credentials.name, email: credentials.email });
       navigate("/");
       localStorage.setItem("userEmail", res.user.email);
     } catch (error) {
@@ -32,6 +36,14 @@ export const RegisterComponent = () => {
           <input
             type="text"
             className="common-input"
+            placeholder="your name"
+            onChange={(event) =>
+              setCredentials({ ...credentials, name: event.target.value })
+            }
+          />
+          <input
+            type="text"
+            className="common-input"
             placeholder="Email or Phone"
             onChange={(event) =>
               setCredentials({ ...credentials, email: event.target.value })
@@ -45,7 +57,7 @@ export const RegisterComponent = () => {
               setCredentials({ ...credentials, password: event.target.value })
             }
           />
-          <button className="login-btn" onClick={login}>
+          <button className="login-btn" onClick={register}>
             Agree & join
           </button>
           <hr className="hr-text" data-content="Or" />

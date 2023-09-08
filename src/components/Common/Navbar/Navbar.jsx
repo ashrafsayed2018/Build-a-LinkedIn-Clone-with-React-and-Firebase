@@ -10,6 +10,7 @@ import {
 } from "react-icons/ai";
 import { BsBriefcase } from "react-icons/bs";
 import User from "../../../assets/user.png";
+import ProfilePopup from "../ProfilePopup";
 const Navbar = () => {
   let navigate = useNavigate();
   const gotoRoute = (route) => {
@@ -36,6 +37,7 @@ const Navbar = () => {
           style={{ width: "40px" }}
           className="react-icon"
         />
+        <ProfilePopup />
       </div>
     </div>
   );

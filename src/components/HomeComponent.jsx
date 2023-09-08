@@ -1,9 +1,9 @@
 import PostStatus from "./Common/PostUpdate/Index";
 
-export const HomeComponent = () => {
+export const HomeComponent = ({ currentUser }) => {
   return (
     <div className="home-component">
-      <PostStatus />
+      <PostStatus currentUser={currentUser} />
     </div>
   );
 };

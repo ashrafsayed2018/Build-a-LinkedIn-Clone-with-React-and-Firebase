@@ -4,7 +4,8 @@ import "./index.scss";
 import ModalComponent from "../../Common/Modal/index";
 import { getStatus, postStatus } from "../../../api/FirestoreApi";
 import PostCard from "../PostCard/index";
-const PostStatus = () => {
+import { getUniqueId } from "../../../helpers/getUniqueId";
+const PostStatus = ({ currentUser }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const [status, setStatus] = useState("");
@@ -16,6 +17,8 @@ const PostStatus = () => {
       status: status,
       timestamp: getCurrentTiemstamp("LLL"),
       userEmail: userEmail,
+      userName: currentUser.name,
+      postId: getUniqueId(),
     };
     postStatus(object);
     setStatus("");
