@@ -27,25 +27,7 @@ $linkedinblue2: #02527e;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    .common-input {
-      height: 30px;
-      padding: 10px;
-      font-size: 19px;
-      color: #515151;
-      font-family: system-ui;
-      background: #fff;
-      outline: none;
-      border: 2px solid #bbb8b8;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      &:focus {
-        border: 2px solid $linkedinblue;
-      }
-      &::placeholder {
-        font-size: 18px;
-        margin: 15px;
-      }
-    }
+
     .login-btn {
       background-color: $linkedinblue;
       color: white;

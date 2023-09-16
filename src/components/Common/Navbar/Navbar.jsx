@@ -31,12 +31,15 @@ const Navbar = () => {
         <AiOutlineSearch size={30} className="react-icon" />
         <AiOutlineMessage size={30} className="react-icon" />
         <AiOutlineBell size={30} className="react-icon" />
+
         <img
           src={User}
           alt="user"
           style={{ width: "40px" }}
           className="react-icon"
+          onClick={() => gotoRoute("/profile")}
         />
+
         <ProfilePopup />
       </div>
     </div>

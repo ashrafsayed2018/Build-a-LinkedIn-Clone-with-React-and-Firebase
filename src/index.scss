@@ -1,4 +1,6 @@
 @import url("./components/Common/common.scss");
+$linkedinblue: #0072b1;
+$linkedinblue2: #02527e;
 :root {
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
@@ -17,4 +19,23 @@
 body {
   background-color: #f5f4f4;
   min-height: 100vh;
+}
+.common-input {
+  height: 30px;
+  padding: 10px;
+  font-size: 16px;
+  color: #515151;
+  font-family: system-ui;
+  background: #fff;
+  outline: none;
+  border: 2px solid #bbb8b8;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  &:focus {
+    border: 2px solid $linkedinblue;
+  }
+  &::placeholder {
+    font-size: 18px;
+    margin: 15px;
+  }
 }

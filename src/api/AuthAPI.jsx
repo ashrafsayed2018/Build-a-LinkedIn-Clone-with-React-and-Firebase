@@ -9,7 +9,6 @@ import { auth } from "../firebaseConfig";
 export const loginApi = (email, password) => {
   try {
     let response = signInWithEmailAndPassword(auth, email, password);
-    console.log(response);
     return response;
   } catch (error) {
     return error;
@@ -18,7 +17,6 @@ export const loginApi = (email, password) => {
 export const registerApi = (email, password) => {
   try {
     let response = createUserWithEmailAndPassword(auth, email, password);
-    console.log(response);
     return response;
   } catch (error) {
     return error;

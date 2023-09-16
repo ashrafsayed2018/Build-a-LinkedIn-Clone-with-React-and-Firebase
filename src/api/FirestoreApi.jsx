@@ -1,5 +1,11 @@
 import { firestore } from "../firebaseConfig";
-import { addDoc, collection, onSnapshot } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  onSnapshot,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 import { toast } from "react-toastify";
 
 const postRef = collection(firestore, "posts");
@@ -44,4 +50,12 @@ export const getCurrentUser = (setCurrentUser) => {
         })[0]
     );
   });
+};
+
+export const EditProfile = (userId, payload) => {
+  console.log(userId);
+  let userToEdit = doc(userRef, userId);
+  updateDoc(userToEdit, payload)
+    .then(() => toast.success("profile has updated"))
+    .catch((error) => console.log(error));
 };

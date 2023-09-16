@@ -1,0 +1,30 @@
+.profile-card {
+  position: relative;
+  width: auto;
+  height: 60vh;
+  background-color: white;
+  margin: 30px;
+  border-radius: 5px;
+  padding: 30px;
+
+  .userName,
+  .userEmail {
+    font-family: systme-ui;
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    font-size: 24px;
+  }
+  .userEmail {
+    margin-top: -20px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .edit-btn {
+    font-family: systme-ui;
+    position: absolute;
+    right: 20px;
+    button {
+      cursor: pointer;
+    }
+  }
+}
