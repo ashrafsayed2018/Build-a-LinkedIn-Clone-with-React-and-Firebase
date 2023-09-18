@@ -9,8 +9,9 @@ export default function ProfileEdit({ onedit, currentUser }) {
     let input = { [name]: value };
     setEditInputs({ ...editInputs, ...input });
   };
-  const updateProfileData = () => {
+  const updateProfileData = async () => {
     EditProfile(currentUser?.userId, editInputs);
+    await onedit();
   };
   return (
     <div className="profile-card">
